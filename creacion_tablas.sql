@@ -9,7 +9,7 @@ CREATE TABLE comisiones (
 );
 CREATE TABLE profesores (
     id_profesor INT AUTO_INCREMENT,
-    dni_profesor VARCHAR(15),
+    dni_profesor VARCHAR(15) UNIQUE,
     edad_profesor TINYINT,
     nombre_profesor VARCHAR(60),
     apellido_profesor VARCHAR(60),
@@ -51,7 +51,7 @@ CREATE TABLE inscripciones(
 );
 CREATE TABLE alumnos(
     id_alumno INT AUTO_INCREMENT,
-    dni_alumno VARCHAR(15),
+    dni_alumno VARCHAR(15) UNIQUE,
     nombre_alumno VARCHAR(60),
     apellido_alumno VARCHAR(60),
     edad_alumno INT,

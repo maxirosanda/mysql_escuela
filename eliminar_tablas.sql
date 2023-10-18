@@ -1,7 +1,7 @@
 Use escuela;
+DROP TABLE asistencias;
 DROP TABLE inscripciones;
 DROP TABLE comisiones;
-DROP TABLE asistencias;
 DROP TABLE profesores;
 DROP TABLE cedes;
 DROP TABLE cursos;
