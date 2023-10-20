@@ -1,0 +1,10 @@
+Use escuela;
+DROP TABLE inasistencias;
+DROP TABLE inscripciones;
+DROP TABLE comisiones;
+DROP TABLE profesores;
+DROP TABLE cedes;
+DROP TABLE cursos;
+DROP TABLE dificultad;
+DROP TABLE categorias;
+DROP TABLE alumnos;

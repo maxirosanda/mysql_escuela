@@ -1,14 +1,4 @@
 Use escuela;
-DROP TABLE inasistencias;
-DROP TABLE inscripciones;
-DROP TABLE comisiones;
-DROP TABLE profesores;
-DROP TABLE cedes;
-DROP TABLE cursos;
-DROP TABLE dificultad;
-DROP TABLE categorias;
-DROP TABLE alumnos;
-
 CREATE TABLE comisiones (
     id_comision INT AUTO_INCREMENT,
     id_curso INT,
@@ -20,24 +10,24 @@ CREATE TABLE comisiones (
 );
 CREATE TABLE profesores (
     id_profesor INT AUTO_INCREMENT,
-    dni_profesor VARCHAR(15) UNIQUE,
-    nombre_profesor VARCHAR(60),
-    apellido_profesor VARCHAR(60),
-	edad_profesor TINYINT,
+    dni VARCHAR(15) UNIQUE,
+    nombre VARCHAR(60),
+    apellido VARCHAR(60),
+	edad TINYINT,
     CONSTRAINT PK_PROFESORES PRIMARY KEY (id_profesor)
 );
 CREATE TABLE cedes (
     id_cede INT AUTO_INCREMENT,
-    nombre_cede VARCHAR(60),
-    direccion_cede VARCHAR(60),
-    localidad_cede VARCHAR(60),
-    tel_cede VARCHAR(15),
+    nombre VARCHAR(60),
+    direccion VARCHAR(60),
+    localidad VARCHAR(60),
+    tel VARCHAR(15),
     CONSTRAINT PK_CEDES PRIMARY KEY (id_cede)
 );
 
 CREATE TABLE cursos(
     id_curso INT AUTO_INCREMENT,
-    nombre_curso VARCHAR(30),
+    nombre VARCHAR(30),
     cantidad_clases TINYINT,
     id_categoria INT,
     id_dificultad INT,
@@ -50,7 +40,7 @@ CREATE TABLE dificultad(
 );
 CREATE TABLE categorias(
     id_categoria INT AUTO_INCREMENT,
-    categoria_curso VARCHAR(30),
+    categoria VARCHAR(30),
     CONSTRAINT PK_CATEGORIA PRIMARY KEY (id_categoria)
 );
 CREATE TABLE inscripciones(
@@ -62,10 +52,10 @@ CREATE TABLE inscripciones(
 );
 CREATE TABLE alumnos(
     id_alumno INT AUTO_INCREMENT,
-    dni_alumno VARCHAR(15) UNIQUE,
-    nombre_alumno VARCHAR(60),
-    apellido_alumno VARCHAR(60),
-    edad_alumno INT,
+    dni VARCHAR(15) UNIQUE,
+    nombre VARCHAR(60),
+    apellido VARCHAR(60),
+    edad INT,
     CONSTRAINT PK_ALUMNOS PRIMARY KEY (id_alumno)
 );
 
