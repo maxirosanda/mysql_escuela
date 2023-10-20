@@ -1,18 +1,29 @@
-
+Use escuela;
+DROP TABLE inasistencias;
+DROP TABLE inscripciones;
+DROP TABLE comisiones;
+DROP TABLE profesores;
+DROP TABLE cedes;
+DROP TABLE cursos;
+DROP TABLE dificultad;
+DROP TABLE categorias;
+DROP TABLE alumnos;
 
 CREATE TABLE comisiones (
     id_comision INT AUTO_INCREMENT,
-    id_cede INT,
     id_curso INT,
+	id_cede INT,
     id_profesor INT,
+    fecha_inicio DATE,
+    fecha_finalizacion DATE,
     CONSTRAINT PK_COMISIONES PRIMARY KEY (id_comision)
 );
 CREATE TABLE profesores (
     id_profesor INT AUTO_INCREMENT,
     dni_profesor VARCHAR(15) UNIQUE,
-    edad_profesor TINYINT,
     nombre_profesor VARCHAR(60),
     apellido_profesor VARCHAR(60),
+	edad_profesor TINYINT,
     CONSTRAINT PK_PROFESORES PRIMARY KEY (id_profesor)
 );
 CREATE TABLE cedes (
@@ -44,9 +55,9 @@ CREATE TABLE categorias(
 );
 CREATE TABLE inscripciones(
     id_inscripto INT AUTO_INCREMENT,
-    id_nota INT,
-    id_alumno INT,
+    nota TINYINT,
     id_comision INT,
+	id_alumno INT,
     CONSTRAINT PK_INSCRIPCIONES PRIMARY KEY (id_inscripto)
 );
 CREATE TABLE alumnos(
@@ -57,19 +68,12 @@ CREATE TABLE alumnos(
     edad_alumno INT,
     CONSTRAINT PK_ALUMNOS PRIMARY KEY (id_alumno)
 );
-CREATE TABLE notas(
-    id_nota INT AUTO_INCREMENT,
-    id_inscripto int,
-    primer_parcial 	TINYINT,
-    segundo_parcial TINYINT,
-    nota_final 	TINYINT,
-    CONSTRAINT PK_NOTAS PRIMARY KEY (id_nota)
-);
-CREATE TABLE asistencias(
-    id_asistencia INT AUTO_INCREMENT,
+
+CREATE TABLE inasistencias(
+    id_inasistencia INT AUTO_INCREMENT,
     id_inscripto INT,
     fecha DATE,
-    CONSTRAINT PK_ASISTENCIAS PRIMARY KEY (id_asistencia)
+    CONSTRAINT PK_INASISTENCIAS PRIMARY KEY (id_inasistencia)
 );
 ALTER TABLE comisiones
 ADD FOREIGN KEY (id_cede) REFERENCES cedes(id_cede),
@@ -81,11 +85,10 @@ ADD FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria),
 ADD FOREIGN KEY (id_dificultad) REFERENCES dificultad(id_dificultad);
 
 ALTER TABLE inscripciones
-ADD FOREIGN KEY (id_nota) REFERENCES notas(id_nota),
 ADD FOREIGN KEY (id_alumno) REFERENCES alumnos(id_alumno),
 ADD FOREIGN KEY (id_comision) REFERENCES comisiones(id_comision);
 
-ALTER TABLE asistencias
+ALTER TABLE inasistencias
 ADD FOREIGN KEY (id_inscripto) REFERENCES inscripciones(id_inscripto);
 
 
