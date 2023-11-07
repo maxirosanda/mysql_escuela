@@ -65,6 +65,32 @@ CREATE TABLE inasistencias(
     fecha DATE,
     CONSTRAINT PK_INASISTENCIAS PRIMARY KEY (id_inasistencia)
 );
+
+
+CREATE TABLE historial_modificaciones_alumnos (
+    id_historia INT AUTO_INCREMENT PRIMARY KEY,
+    id_alumno INT,
+    dni_anterior VARCHAR(15),
+    nombre_anterior VARCHAR(60),
+    apellido_anterior VARCHAR(60),
+    edad_anterior INT,
+    accion VARCHAR(15),
+    fecha_hora DATETIME,
+    usuario VARCHAR(50)  -- Nueva columna para el usuario
+);
+
+CREATE TABLE historial_modificaciones_comisiones (
+    id_historia INT AUTO_INCREMENT PRIMARY KEY,
+    id_comision INT,
+    id_curso INT,
+    id_cede INT,
+    id_profesor INT,
+    fecha_inicio_anterior DATE,
+    fecha_finalizacion_anterior DATE,
+    accion VARCHAR(15),
+    fecha_hora DATETIME,
+    usuario VARCHAR(50)  -- Nueva columna para el usuario
+);
 ALTER TABLE comisiones
 ADD FOREIGN KEY (id_cede) REFERENCES cedes(id_cede),
 ADD FOREIGN KEY (id_curso) REFERENCES cursos(id_curso),

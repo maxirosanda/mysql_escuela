@@ -7,4 +7,6 @@ DROP TABLE cedes;
 DROP TABLE cursos;
 DROP TABLE dificultad;
 DROP TABLE categorias;
+DROP TABLE historial_modificaciones_alumnos;
 DROP TABLE alumnos;
+DROP TABLE historial_modificaciones_comisiones;
