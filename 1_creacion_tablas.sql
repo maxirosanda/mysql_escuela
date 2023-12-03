@@ -1,3 +1,4 @@
+CREATE SCHEMA `escuela` ;
 Use escuela;
 CREATE TABLE comisiones (
     id_comision INT AUTO_INCREMENT,

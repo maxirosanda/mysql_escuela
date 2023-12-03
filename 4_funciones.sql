@@ -2,17 +2,21 @@ USE escuela;
 DELIMITER //
 
 CREATE FUNCTION calcular_promedio_alumno(id_alumno INT) 
-	RETURNS DECIMAL(5,2)
-	DETERMINISTIC
-	BEGIN
-		DECLARE promedio DECIMAL(5,2);
-		
-		SELECT AVG(nota) INTO promedio
-		FROM inscripciones
-		WHERE id_alumno = id_alumno;
-		
-		RETURN promedio;
-	END//
+    RETURNS DECIMAL(5,2)
+    DETERMINISTIC
+    BEGIN
+        DECLARE promedio DECIMAL(5,2);
+
+        SELECT AVG(nota) INTO promedio
+        FROM inscripciones
+        WHERE id_alumno = id_alumno;
+
+        IF promedio IS NULL THEN
+            RETURN 'No hay notas para promediar';
+        END IF;
+
+        RETURN promedio;
+    END//
 DELIMITER ;
 
 SELECT calcular_promedio_alumno(1);
@@ -33,5 +37,4 @@ CREATE FUNCTION obtener_fecha_finalizacion_curso(id_alumno INT, id_comision INT)
 	END//
 
 DELIMITER ;
-
 SELECT obtener_fecha_finalizacion_curso(1,1);
