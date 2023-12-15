@@ -38,6 +38,13 @@ INSERT INTO comisiones VALUES (null,5,2,6,'2023-07-15', '2023-09-15');
 INSERT INTO comisiones VALUES (null,6,1,5,'2023-09-15', '2023-12-15');
 INSERT INTO comisiones VALUES (null,6,2,5,'2023-09-15', '2023-12-15');
 INSERT INTO comisiones VALUES (null,6,1,2,'2023-09-15', '2023-12-15');
+INSERT INTO comisiones VALUES (null,4,1,3,'2023-11-15', '2024-01-15');
+INSERT INTO comisiones VALUES (null,5,1,6,'2023-11-15', '2024-01-15');
+INSERT INTO comisiones VALUES (null,5,2,6,'2023-11-15', '2024-01-15');
+INSERT INTO comisiones VALUES (null,6,1,5,'2023-12-15', '2024-02-15');
+INSERT INTO comisiones VALUES (null,6,2,5,'2023-12-31', '2023-02-15');
+INSERT INTO comisiones VALUES (null,6,1,2,'2023-12-31', '2024-02-15');
+
 INSERT INTO alumnos VALUES (null,23204700,'Echegaray','Marco Antonio',50);
 INSERT INTO alumnos VALUES (null,36397097,'Bocanera','Damian',32);
 INSERT INTO alumnos VALUES (null,19061587,'Ferrufino arando','Miguel angel',29);
@@ -783,6 +790,26 @@ INSERT INTO inscripciones VALUES (null,null,15,357);
 INSERT INTO inscripciones VALUES (null,null,15,358);
 INSERT INTO inscripciones VALUES (null,null,15,359);
 INSERT INTO inscripciones VALUES (null,null,15,360);
+
+INSERT INTO inscripciones VALUES (null,null,20,352);
+INSERT INTO inscripciones VALUES (null,null,20,353);
+INSERT INTO inscripciones VALUES (null,null,20,354);
+INSERT INTO inscripciones VALUES (null,null,20,355);
+INSERT INTO inscripciones VALUES (null,null,20,356);
+INSERT INTO inscripciones VALUES (null,null,20,357);
+INSERT INTO inscripciones VALUES (null,null,20,358);
+INSERT INTO inscripciones VALUES (null,null,20,359);
+INSERT INTO inscripciones VALUES (null,null,20,360);
+
+INSERT INTO inscripciones VALUES (null,null,21,224);
+INSERT INTO inscripciones VALUES (null,null,21,225);
+INSERT INTO inscripciones VALUES (null,null,21,226);
+INSERT INTO inscripciones VALUES (null,null,21,227);
+INSERT INTO inscripciones VALUES (null,null,21,228);
+INSERT INTO inscripciones VALUES (null,null,21,229);
+INSERT INTO inscripciones VALUES (null,null,21,230);
+INSERT INTO inscripciones VALUES (null,null,21,231);
+
 INSERT INTO inasistencias VALUES (null,1,'2023-02-16');
 INSERT INTO inasistencias VALUES (null,44,'2023-02-24');
 INSERT INTO inasistencias VALUES (null,54,'2023-02-28');
